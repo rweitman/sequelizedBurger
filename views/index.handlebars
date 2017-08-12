@@ -1,0 +1,56 @@
+<center>
+<table><tr><td><center>
+ON THE ORDER!<br>
+
+
+<ul>
+<div class="form-group">
+  {{#each burgers}}
+    {{#unless this.devoured}}
+      <li>
+        {{this.burger_name}}
+
+          <form action="/?_method=PUT" method="POST" class="button-size">
+          <input type="hidden" name="id" value="{{this.id}}">
+          <button type="submit">EAT!</button>
+        </form>
+
+      </li><br>
+    {{/unless}}
+  {{/each}}
+  </div>
+</ul>
+</td>
+<td><center><img src="img/burger.png" width="400px"><br><h2>Eat-Da-Burger!</h2>
+<br><br>
+<form method="POST" action="/" class="button-size">
+  <textarea type="text" name="bun"></textarea><br>
+  <button type="submit">Submit!</button>
+</form>
+
+
+<br>
+<h5>Enter a burger you want to eat. Click the "Submit" Button</h5>
+
+
+
+
+
+</td>
+
+
+<td>
+<center>
+EATEN!<br>
+<ul>
+<div class="form-group">
+  {{#each burgers}}
+    {{#if this.devoured}}
+      <li>
+        {{this.burger_name}}
+      </li><br>
+    {{/if}}
+  {{/each}}
+  </div>
+</ul>
+</td></tr></table>
